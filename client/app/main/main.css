@@ -1,0 +1,186 @@
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  //position: relative;
+  height: calc(100vh - 50px);
+  width: 100%;
+  padding: 30px 15px;
+  color: #fefdeb;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: transparent;
+  font-family: 'Cupcakes';
+  font-size: 6em;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000,   1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;
+}
+
+.hero-img {
+  max-height: 40vh;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.full-height {
+  height: calc(100vh - 50px);
+  //width: 100%;
+}
+
+.page-header {
+  border:;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 70vh;
+}
+
+.product-select {
+  min-height: 70vh;
+}
+
+.product {
+  width: 8vw;
+  height: 8vw;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: .3em;
+  padding: 2px;
+  background-clip: padding-box;
+  background-size: cover;
+}
+/* line 197, ../sass/project/_custom.scss */
+.product img {
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+  display: block;
+  left: 0;
+  max-width: 100%;
+}
+/* line 206, ../sass/project/_custom.scss */
+.product span {
+  color: #fefdeb;
+  font-size: .9rem;
+  line-height: 1rem;
+  text-shadow: 2px 1px 0 #2c3e50, -1px -1px 0 #2c3e50, 1px -1px 0 #2c3e50, -1px 1px 0 #2c3e50, 1px 1px 0 #2c3e50;
+}
+
+/* Ribbon */
+
+.ribbon {
+  width: 50%;
+  margin-left: 25%;
+  position: relative;
+  display: block;
+  margin-top: 1rem;
+  height: 3rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: white;
+  text-align: center;
+}
+/* line 66, ../sass/_mixins.scss */
+.ribbon > .flag {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4.5rem;
+  background-color: #233140;
+}
+/* line 73, ../sass/_mixins.scss */
+.ribbon > .left {
+  left: 1.5rem;
+}
+/* line 77, ../sass/_mixins.scss */
+.ribbon > .right {
+  right: 1.5rem;
+}
+/* line 81, ../sass/_mixins.scss */
+.ribbon > .left:before, .ribbon > .left:after {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  border-left: 1.5rem solid transparent;
+}
+/* line 88, ../sass/_mixins.scss */
+.ribbon > .left:before {
+  border-top: 1.5rem solid #233140;
+}
+/* line 92, ../sass/_mixins.scss */
+.ribbon > .left:after {
+  bottom: 0;
+  border-bottom: 1.5rem solid #233140;
+}
+/* line 97, ../sass/_mixins.scss */
+.ribbon > .right:before, .ribbon > .right:after {
+  content: "";
+  position: absolute;
+  right: -1.5rem;
+  border-right: 1.5rem solid transparent;
+}
+/* line 104, ../sass/_mixins.scss */
+.ribbon > .right:before {
+  border-top: 1.5rem solid #233140;
+}
+/* line 108, ../sass/_mixins.scss */
+.ribbon > .right:after {
+  bottom: 0;
+  border-bottom: 1.5rem solid #233140;
+}
+/* line 113, ../sass/_mixins.scss */
+.ribbon > .flag > .shadow-left {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 3rem solid transparent;
+  border-top: 1rem solid black;
+}
+/* line 123, ../sass/_mixins.scss */
+.ribbon > .flag > .shadow-right {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 3rem solid transparent;
+  border-top: 1rem solid black;
+}
+/* line 133, ../sass/_mixins.scss */
+.ribbon > .center {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3rem;
+  right: 3rem;
+  background-color: #2c3e50;
+  transform: translateY(-1rem);
+  outline: 1px dashed rgba(255, 255, 255, 0.3);
+  outline-offset: -0.3rem;
+}

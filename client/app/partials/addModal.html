@@ -1,0 +1,77 @@
+<div class="modal-header"><h3>{{modalOptions.headerText}}</h3></div>
+<div class="modal-body">
+<div class="row equal-height">
+<div class="col-md-9">
+<form class="newProductForm form-horizontal">
+    
+    <!-- Text input-->
+<div class="form-group">
+  <label class="col-md-3 control-label" for="textinput">Naam:</label>  
+  <div class="col-md-8">
+  <input id="textinput" name="textinput" type="text" placeholder="Kies een naam" ng-model="product.name" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-3 control-label" for="selectbasic">Categorie:</label>
+  <div class="col-md-8">
+    <select id="selectbasic" name="selectbasic" ng-model="product.category" class="form-control">
+      <option value="sandwiches">Sandwiches</option>
+      <option value="scones">Scones</option>
+      <option value="sweets">Zoet</option>
+      <option value="kids">Kinderen</option>
+    </select>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-3 control-label" for="radios">Menu:</label>
+  <div class="col-md-8">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" ng-model="product.menu" name="radios" id="radios-0" value="basis" checked="checked">
+      Basis
+    </label>
+  </div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" ng-model="product.menu" name="radios" id="radios-1" value="deluxe">
+      Deluxe
+    </label>
+  </div>
+  </div>
+</div>
+
+<!-- File Button --> 
+<div class="form-group">
+  <div class="col-md-3"><button class="btn btn-primary pull-right" ngf-select ng-model="picFile" accept="image/*"><i class="fa fa-camera-retro"></i></button></div>
+  <div class="col-md-8">  
+  <div class="cropWrapper">
+  <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea stitched">
+    <img-crop image="picFile  | ngfDataUrl" area-type="square" area-min-size="100" ngf-resize="{width: 75, height: 75}" result-image="croppedDataUrl" ng-init="croppedDataUrl=''"></img-crop>
+  </div>
+  </div>
+  </div>
+</div>
+
+</div>
+</form>
+
+<div class="col-md-3">
+<!--h5>Afbeelding:</h5-->
+<div class="img-result stitched">
+    <img ng-src="{{croppedDataUrl}}">
+    <span>{{croppedDataUrl}}"</span>
+</div>
+<button class="btn btn-primary" ng-click="upload(product)"><i class="fa fa-thumbs-up"></i></button> 
+<!-- Button -->
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-custom" 
+          data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
+  <button class="btn btn-primary" 
+          data-ng-click="product.img = croppedDataUrl; modalOptions.ok(product);">{{modalOptions.actionButtonText}}</button>
+</div>

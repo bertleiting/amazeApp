@@ -1,0 +1,43 @@
+<navbar></navbar>
+
+<div class="hero-unit" id="banner">
+  <div class="container">
+    <h1>British Treats</h1>
+    <img src="assets/images/logo.png" class="hero-img" alt="British Treats">
+        <div class="ribbon">
+<div class="flag left">
+<div class="shadow-left"></div>
+</div>
+<div class="center">Home of high tea</div>
+<div class="flag right">
+<div class="shadow-right"></div>
+</div>
+</div>
+  </div>
+</div>
+
+<div class="container full-height">
+  <div class="row">
+  <h1 class="page-header">Producten:</h1>
+    <div class="col-lg-8 stitched">
+      <ul class="product-container">
+        <li class="product stitched" ng-repeat="thing in main.awesomeThings"><span>{{thing.name}}</span><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  <div class="col-lg-3 col-lg-offset-1 stitched product-select">
+    
+  </div>
+  </div>
+
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="main.newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer></footer>

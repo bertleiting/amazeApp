@@ -1,0 +1,106 @@
+<navbar></navbar>
+
+<div class="container">
+
+  <!-- Product management --> 
+
+  <div class="row">
+  <h1 class="page-header">Producten:</h1>
+    <div class="col-lg-9 stitched">
+
+      <ul class="product-container">
+        <li draggable="true" class="product stitched" ng-repeat="product in admin.allProducts"><span>{{product.name}}</span></li>
+      </ul>
+    </div>
+    <div class="col-lg-3 stitched product-menu">
+
+    <ul>
+    <li class="menu-btn stitched" ng-click="admin.addProduct()"><i class="fa fa-plus"></i></li>
+    <li class="menu-btn stitched"></li>
+    <li class="menu-btn stitched"></li>
+    </ul>
+
+    <form class="newProductForm">
+    <label>Nieuw product:</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Kies een naam." ng-model="admin.name"/>
+      <select name="multipleSelect" id="multipleSelect" ng-model="admin.category">
+        <option value="sandwiches">Sandwiches</option>
+        <option value="scones">Scones</option>
+        <option value="sweets">Sweets</option>
+        <option value="kids">Kids</option>
+      </select>
+
+      <input type="radio" ng-model="admin.menu" value="basis" /><label for="radio">Basis</label>
+      <input type="radio" ng-model="admin.menu" value="deluxe" /><label for="radio">Deluxe</label>
+
+      <button class="btn btn-primary" ngf-select ng-model="picFile" accept="image/*">Kies afbeelding</button>
+        
+      <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea stitched">
+            
+          <img-crop image="picFile  | ngfDataUrl" area-type="square" area-min-size="100" result-image="croppedDataUrl" ng-init="croppedDataUrl=''"></img-crop>
+        
+      </div>
+        
+      <div class="img-result stitched">
+            <img ng-src="{{croppedDataUrl}}" />
+      </div>
+        
+      <button class="btn btn-primary" ng-click="upload(croppedDataUrl)">Submit</button> 
+            
+        <span class="progress" ng-show="progress >= 0">
+          <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+        </span>
+        <span ng-show="result">Upload Successful</span>
+        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+      <!--span class="input-group-btn"-->
+        <button type="submit" class="btn btn-primary" ng-click="admin.delete()">Add New</button>
+      <!--/span-->
+    </div>
+  </form>
+
+        <!--form class="thing-form">
+    <label>Nieuw product</label>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Kies een naam." ng-model="admin.name"/>
+      <select name="multipleSelect" id="multipleSelect" ng-model="admin.category">
+        <option value="sandwiches">Sandwiches</option>
+        <option value="scones">Scones</option>
+        <option value="sweets">Sweets</option>
+        <option value="kids">Kids</option>
+      </select>
+
+      <input type="radio" ng-model="admin.menu" value="basis" /><label for="radio">Basis</label>
+      <input type="radio" ng-model="admin.menu" value="deluxe" /><label for="radio">Deluxe</label>
+
+      <div>Select an image file: <input type="file" id="fileInput" /></div>
+  <div class="cropArea">
+    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+  </div>
+  <div>Cropped Image:</div>
+  <div><img ng-src="{{myCroppedImage}}" /></div>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="admin.add()">Add New</button>
+      </span>
+    </div>
+  </form>
+    </div>
+  </div-->
+
+  <!-- User management -->
+  <div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+   <h1 class="page-header">Gebruikers:</h1>
+  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+  <ul class="list-group user-list">
+    <li class="list-group-item" ng-repeat="user in admin.users">
+	    <div class="user-info">
+	        <strong>{{user.name}}</strong><br>
+	        <span class="text-muted">{{user.email}}</span>
+	    </div>
+        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+    </li>
+  </ul>
+  </div>
+</div>
+</div>
